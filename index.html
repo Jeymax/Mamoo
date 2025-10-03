@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamoo Mute | Mute su Misura per Apnea e Pesca Subacquea</title>
+    <meta name="description" content="Realizzazione artigianale di mute su misura per apnea e pesca in apnea. Utilizziamo solo i migliori materiali come Neoprene Yamamoto e Yako. Richiedi un preventivo gratuito.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- Reset e Stili Globali --- */
+        :root {
+            --colore-primario: #004a63; /* Blu scuro dal logo */
+            --colore-secondario: #ffffff; /* Bianco */
+            --colore-accento: #1f82a1; /* Un blu più chiaro per bottoni/link */
+            --colore-testo: #333333;
+            --colore-sfondo: #f4f4f4;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--colore-testo);
+            background-color: var(--colore-secondario);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 0 2rem;
+            overflow: hidden;
+        }
+        
+        h1, h2 {
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h2 {
+           text-align: center;
+           font-size: 2.5rem;
+           padding-bottom: 1rem;
+           border-bottom: 2px solid var(--colore-accento);
+           display: inline-block;
+        }
+        
+        section {
+            padding: 4rem 0;
+            text-align: center;
+        }
+
+        /* --- Sezione Hero (Intestazione) --- */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('D:\\Andrea\\Mute\\hero.jpg') no-repeat center center/cover;
+            height: 100vh;
+            color: var(--colore-secondario);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .hero img.logo {
+            max-width: 400px;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h3 {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: var(--colore-accento);
+            color: var(--colore-secondario);
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            background: var(--colore-primario);
+            transform: scale(1.05);
+        }
+
+        /* --- Stili delle Sezioni --- */
+        #chi-siamo, #materiali, #come-funziona {
+            background: var(--colore-secondario);
+        }
+
+        #preventivo {
+            background: var(--colore-sfondo);
+        }
+
+        .section-content {
+            margin-top: 2rem;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: left;
+        }
+
+        .section-content-centered {
+             text-align: center;
+        }
+
+        /* --- Sezione Galleria (NUOVO STILE) --- */
+        #galleria {
+            background-color: var(--colore-sfondo); /* Sfondo leggermente diverso per staccare */
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Colonne adattive per immagini verticali */
+            gap: 1.5rem;
+            max-width: 1000px; /* Limita la larghezza massima della griglia */
+            margin: 0 auto; /* Centra la griglia */
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 400px; /* Altezza fissa per le immagini verticali */
+            object-fit: cover; /* Assicura che le immagini coprano l'area senza distorsioni */
+            border-radius: 8px; /* Angoli arrotondati */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* Leggera ombra */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-grid img:hover {
+            transform: translateY(-5px); /* Effetto leggero al passaggio del mouse */
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        /* --- Sezione Materiali --- */
+        .materiali-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+            text-align: left;
+        }
+
+        .material-card {
+            padding: 1.5rem;
+            border-left: 4px solid var(--colore-primario);
+        }
+
+        .material-card h4 {
+            font-size: 1.5rem;
+            color: var(--colore-primario);
+            margin-bottom: 0.5rem;
+        }
+
+        /* --- Sezione Come Funziona --- */
+        .steps-grid {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 3rem;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .step {
+            flex: 1;
+            padding: 1.5rem;
+            min-width: 280px;
+        }
+        
+        .step-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: var(--colore-accento);
+        }
+
+        .step h4 {
+            font-size: 1.5rem;
+            margin: 0.5rem 0;
+        }
+
+        /* --- Modulo Preventivo --- */
+        .form-container {
+            max-width: 800px;
+            margin: 2rem auto 0 auto;
+            text-align: left;
+            padding: 2rem;
+            background: var(--colore-secondario);
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 700;
+            color: var(--colore-primario);
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .radio-group label {
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .form-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--colore-testo);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .form-group small {
+            font-style: italic;
+            color: #666;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--colore-primario);
+            color: var(--colore-secondario);
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        
+        footer .logo-footer {
+            max-width: 200px;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+        }
+
+        footer a {
+            color: var(--colore-secondario);
+            text-decoration: none;
+        }
+
+        .social-icons a {
+            font-size: 1.5rem;
+            margin: 0 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--colore-accento);
+        }
+
+        /* --- Media Queries per Responsive Design --- */
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.2rem; }
+
+            .hero img.logo { max-width: 300px; }
+            .form-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 576px) {
+            .gallery-grid img {
+                height: 300px; /* Altezza ridotta per schermi più piccoli */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <img src="D:\Andrea\Mute\logo.png" alt="Logo Mamoo Mute" class="logo">
+        <h1>La tua seconda pelle, creata solo per te.</h1>
+        <h3>Mute su misura per apnea e pesca subacquea. Comfort, calore e performance senza compromessi.</h3>
+        <a href="#preventivo" class="btn">CREA LA TUA MUTA ORA</a>
+    </header>
+
+    <main>
+        <section id="chi-siamo">
+            <div class="container">
+                <h2>Passione Artigianale, Prestazioni Professionali</h2>
+                <div class="section-content section-content-centered">
+                    <p>
+                        Mamoo nasce dalla nostra viscerale passione per il mare. Sappiamo che in apnea o durante una battuta di pesca, la muta non è solo un indumento: è un'attrezzatura fondamentale che deve garantire comfort assoluto, massima libertà di movimento e protezione termica ottimale.
+                    </p>
+                    <p>
+                        Per questo, ogni muta Mamoo è un pezzo unico, tagliato e incollato a mano nel nostro laboratorio. Seguiamo le tue misure e le tue esigenze per darti non una semplice muta, ma una vera e propria seconda pelle che si adatta perfettamente al tuo corpo e al tuo stile di immersione.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="galleria">
+            <div class="container">
+                <h2>Le Tue Avventure, la Nostra Arte</h2>
+                <p class="section-content-centered" style="max-width: 700px; margin: 1rem auto 3rem auto;">
+                    Ogni muta Mamoo è il risultato di anni di esperienza e di una profonda conoscenza del mare. Scopri alcuni dei nostri capolavori, pensati per garantirti prestazioni e stile in ogni immersione.
+                </p>
+                <div class="gallery-grid">
+                    <img src="D:\Andrea\Mute\muta1.jpg" alt="Muta su misura Mamoo 1">
+                    <img src="D:\Andrea\Mute\muta2.jpg" alt="Muta su misura Mamoo 2">
+                    <img src="D:\Andrea\Mute\muta3.jpg" alt="Muta su misura Mamoo 3">
+                    <img src="D:\Andrea\Mute\muta4.jpg" alt="Muta su misura Mamoo 4">
+                    <img src="D:\Andrea\Mute\muta5.jpg" alt="Muta su misura Mamoo 5">
+					<img src="D:\Andrea\Mute\muta6.jpg" alt="Muta su misura Mamoo 6">
+					<img src="D:\Andrea\Mute\muta7.jpg" alt="Muta su misura Mamoo 7">
+					<img src="D:\Andrea\Mute\muta8.jpg" alt="Muta su misura Mamoo 8">
+                </div>
+            </div>
+        </section>
+        <section id="materiali">
+            <div class="container">
+                <h2>Solo il Meglio per la Tua Performance</h2>
+                <div class="section-content section-content-centered">
+                  <p>La scelta del neoprene è il primo passo per una muta eccezionale. Selezioniamo solo i migliori materiali disponibili sul mercato per garantire elasticità, resistenza e un isolamento termico superiore.</p>
+                </div>
+                <div class="materiali-grid">
+                    <div class="material-card">
+                        <h4>Neoprene YAMAMOTO®</h4>
+                        <p>Leader mondiale nella produzione di neoprene di alta gamma. Ricavato dal calcare, è più ecologico e presenta una struttura a celle chiuse uniforme che lo rende incredibilmente leggero, elastico e caldo. Ideale per chi cerca le massime prestazioni in termini di mobilità e comfort.</p>
+                    </div>
+                    <div class="material-card">
+                        <h4>Neoprene YAKO®</h4>
+                        <p>Rinomato per la sua incredibile morbidezza e resistenza allo schiacciamento. Il neoprene Yako offre un comfort superiore e una vestibilità che si adatta perfettamente al corpo, mantenendo le sue proprietà termiche anche in profondità.</p>
+                    </div>
+                    <div class="material-card">
+                        <h4>Fodere e Finiture</h4>
+                        <p>Scegli tra il classico <strong>Liscio/Spaccato</strong>, per il massimo calore e aderenza, o il resistente <strong>Foderato/Spaccato</strong>, per una maggiore durata e facilità di vestizione. Ogni dettaglio, dal colore alle finiture, è pensato per te.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <section id="come-funziona">
+            <div class="container">
+                <h2>La Tua Muta in 3 Semplici Passi</h2>
+                <div class="steps-grid">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h4>Invia le Tue Misure</h4>
+                        <p>Compila il modulo sottostante con i tuoi dati e le tue misure. È facile e veloce.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h4>Ricevi il Preventivo</h4>
+                        <p>Ti contatteremo al più presto con un preventivo dettagliato e personalizzato.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h4>Realizzazione Artigianale</h4>
+                        <p>Una volta confermato, inizieremo a creare la tua muta Mamoo, curando ogni singolo dettaglio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="preventivo">
+            <div class="container">
+                <h2>Crea la Tua Muta su Misura</h2>
+                <p style="max-width: 700px; margin: 1rem auto;">Compila il modulo con le tue informazioni e le misure principali. Ti contatteremo al più presto con un preventivo gratuito e senza impegno.</p>
+                
+                <div class="form-container">
+                    <form action="#" method="POST"> <div class="form-title">I Tuoi Dati</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="nome">Nome e Cognome *</label>
+                                <input type="text" id="nome" name="nome" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="citta">Città *</label>
+                                <input type="text" id="citta" name="citta" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Telefono *</label>
+                                <input type="tel" id="telefono" name="telefono" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Indirizzo Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+
+                        <div class="form-title">La Tua Muta</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Modello *</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="modello" value="Liscio" checked> Liscio/Spaccato</label>
+                                    <label><input type="radio" name="modello" value="Foderato"> Foderato/Spaccato</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Colore *</label>
+                                <div class="radio-group">
+                                    <label><input type="radio" name="colore" value="Nero" checked> Nero</label>
+                                    <label><input type="radio" name="colore" value="Mimetico"> Mimetico</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-title">Le Tue Misure</div>
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label for="peso">Peso (kg) *</label>
+                                <input type="text" id="peso" name="peso" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="altezza">Altezza (cm) *</label>
+                                <input type="text" id="altezza" name="altezza" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="torace">Circonferenza Torace (cm) *</label>
+                                <small>Misurare nel punto più largo</small>
+                                <input type="text" id="torace" name="torace" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="vita">Circonferenza Vita (cm) *</label>
+                                <small>Misurare sopra l'ombelico</small>
+                                <input type="text" id="vita" name="vita" required>
+                            </div>
+                            <div class="form-group full-width">
+                                <label for="bacino">Circonferenza Bacino (cm) *</label>
+                                <small>Misurare nel punto più largo dei fianchi</small>
+                                <input type="text" id="bacino" name="bacino" required>
+                            </div>
+                        </div>
+
+                        <div class="form-title">Note Aggiuntive</div>
+                         <div class="form-group">
+                            <label for="note">Note o Richieste Specifiche</label>
+                            <textarea id="note" name="note" placeholder="Es: Spessore 5mm, rinforzi sternali e sui gomiti, colore mimetico sui toni del verde..."></textarea>
+                        </div>
+                        
+                        <div class="form-group full-width" style="text-align: center; margin-top: 2rem;">
+                            <button type="submit" class="btn">Invia Richiesta</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <img src="D:\Andrea\Mute\logo.png" alt="Logo Mamoo Mute" class="logo-footer">
+            <p><strong>Mamoo Mute | Rosignano Marittimo (LI)</strong></p>
+            <p>P.IVA: [La tua Partita IVA]</p>
+            <p>
+                <a href="mailto:info@mamoomute.it">info@mamoomute.it</a> | 
+                <a href="tel:+393293315089">+39 329 331 5089</a>
+            </p>
+            <div class="social-icons">
+                 <a href="#" aria-label="Facebook">F</a> <a href="#" aria-label="Instagram">I</a> </div>
+            <p style="margin-top: 2rem; font-size: 0.8rem;">&copy; 2025 Mamoo Mute. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
